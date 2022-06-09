@@ -1,0 +1,22 @@
+.pin {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.button {
+    background-color: #028484;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

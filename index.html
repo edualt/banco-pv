@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
+    <link rel="stylesheet" href="css/index.css" class="css">
+    <title>ATM</title>
+</head>
+<body style="font-family: Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #02529b">
+
+    <div class="container col">
+        <div class ="d-flex justify-content-center align-items-center min-vh-100">
+            <div class="text-center text-white p-4" style="background-color: #1973b8;">
+                <h1><b>BIENVENIDO A BANCO UP</b></h1>
+                <h4>Ingresa tu NIP</h4>
+                <div class="p-4">
+                    <form id="inputs" class="d-flex justify-content-center row">
+                        <input class="pin mb-2" type="password" maxlength="1" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input2.focus()" />
+                        <input class="pin mb-2" type="password" maxlength="1" id="input2" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input3.focus()" />
+                        <input class="pin mb-2" type="password" maxlength="1" id="input3" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input4.focus()" />
+                        <input class="pin mb-2" type="password" maxlength="1" id="input4" />
+                        <div class="d-flex pt-2 justify-content-center align-items-center">
+                            <button class="button">Login</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
