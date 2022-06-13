@@ -1,22 +1,40 @@
-.pin {
-    margin: 0 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #333;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    font-size: 5rem;
+
+.login {
+    width: 500px;
+    max-width: 100%;
 }
 
-.button {
-    background-color: #028484;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+@media (max-width: 575px) {
+    .login {
+        width: 100%;
+    }
 }
+
+.login .form-control {
+    border: 0;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin-bottom: 7px;
+}
+
+
+.login-btn {
+    padding: 13px 30px;
+    background-color: #000;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border: #000;
+}
+
+.login-btn:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+}
+
+

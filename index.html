@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
-    <link rel="stylesheet" href="css/index.css" class="css">
-    <title>ATM</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="origin" name="referer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" class="css" />
+  <link rel="stylesheet" href="css/index.css" class="css" />
+  <title>ATM</title>
 </head>
-<body style="font-family: Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #02529b">
 
-    <div class="container col">
-        <div class ="d-flex justify-content-center align-items-center min-vh-100">
-            <div class="text-center text-white p-4" style="background-color: #1973b8;">
-                <h1><b>BIENVENIDO A BANCO UP</b></h1>
-                <h4>Ingresa tu NIP</h4>
-                <div class="p-4">
-                    <form id="inputs" class="d-flex justify-content-center row">
-                        <input class="pin mb-2" type="password" maxlength="1" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input2.focus()" />
-                        <input class="pin mb-2" type="password" maxlength="1" id="input2" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input3.focus()" />
-                        <input class="pin mb-2" type="password" maxlength="1" id="input3" onkeyup="if (this.value.length == this.getAttribute('maxlength')) input4.focus()" />
-                        <input class="pin mb-2" type="password" maxlength="1" id="input4" />
-                        <div class="d-flex pt-2 justify-content-center align-items-center">
-                            <button class="button">Login</button>
-                        </div>
-                    </form>
-                    
-                </div>
-            </div>
-        </div>
+<body style="
+      font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #63b2fd;
+    ">
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="p-5" style="background-color: #ffffff" id="workspace">
+      <div class="login">
+        <h2 class="fs-30 fw-bold mb-4">Banco UP</h2>
+        <form action="#!" id="form">
+          <div class="form-group">
+            <label for="no_cuenta" class="sr-only">NUMERO DE CUENTA</label>
+            <input type="text" name="no_cuenta" id="no_cuenta" class="form-control" placeholder="Numero de cuenta" />
+            <p id="error"></p>
+          </div>
+          <div class="form-group mb-3">
+            <label for="nip" class="">NIP</label>
+            <input type="password" name="password" id="nip" class="form-control" placeholder="NIP" />
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-5">
+            <input name="login" id="login" class="btn login-btn" type="submit" value="Login" />
+          </div>
+        </form>
+        <p class="fs-14 text-center">
+          <a href="register.html" class="text-reset">Registrarse</a>
+        </p>
+      </div>
     </div>
-
-    <script src="js/index.js"></script>
+  </div>
+  <script src="js/login.js" type="module"></script>
 </body>
+
 </html>
