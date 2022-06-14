@@ -10,14 +10,28 @@ const psaldo = document.getElementById('psaldo');
 
 console.log(id)
 
+//evalue first 4 digit of c_personal
 
-fetch(`http://127.0.0.1:4000/api/users/${id}`)
-.then(res => res.json())
-.then(json => {
+if(c_personal.substring(0,4) === '4152'){
+    fetch(`http://127.0.0.1:4000/api/users/personal/${id}`)
+    .then(res => res.json())
+    .then(json => {
     console.log(json);
 
     welcome.innerHTML = `Welcome ${json[0].first_name}`;
     psaldo.innerHTML += '$' + saldo;
 })
+}else if(c_empresarial.substring(0,4) === '3142'){
+    fetch(`http://127.0.0.1:4000/api/users/empresarial/${id}`)
+    .then(res => res.json())
+    .then(json => {
+    console.log(json);
+
+    welcome.innerHTML = `Welcome ${json[0].first_name}`;
+    psaldo.innerHTML += '$' + saldo;
+})
+}
+
+
 
 

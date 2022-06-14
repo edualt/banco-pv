@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="origin" name="referer">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
-    <link rel="stylesheet" href="css/index.css" class="css">
-    <title>ATM</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="origin" name="referer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
+  <link rel="stylesheet" href="css/index.css" class="css">
+  <title>ATM</title>
 </head>
+
 <body style="font-family: Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #63b2fd;">
 
-    <div class ="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
 
     <div class="p-5" style="background-color: #ffffff;">
-        <div class="login">
-          <h2 class="fs-30 fw-bold">Banco UP</h2>
-          <p>Registrarse</p>
-          <form action="#!" id="form">
-            <div class="form-group mb-3">
-                <label for="rfc" class="">RFC</label>
-                <input type="text" name="rfc" id="rfc" class="form-control" placeholder="RFC" maxlength="13">
-              </div>
+      <div class="login">
+        <div class="d-flex ">
+          <h2 class="fs-30 fw-bold">Banco UP </h2> <span class="align-bottom" id="prueba"> Registrarse</span>
+          
+        </div>
+        
+        <form action="#!" id="form">
+          <div class="d-flex justify-content-between">
             <div class="form-group">
               <label for="first_name" class="sr-only">NOMBRES</label>
               <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Nombres">
@@ -30,26 +32,36 @@
               <label for="last_name" class="">APELLIDOS</label>
               <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellidos">
             </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="form-group me-3">
+              <label for="rfc" class="">RFC</label>
+              <input type="text" name="rfc" id="rfc" class="form-control" placeholder="RFC" maxlength="13">
+            </div>
+  
             <div class="form-group mb-3">
               <label for="nip" class="">NIP</label>
               <input type="password" name="nip" id="nip" class="form-control" placeholder="Inserte 4 digitos para su nip">
             </div>
-            <div class="form-group mb-3">
-              <label for="cuenta_select" class="">TIPO DE CUENTA</label>
-              <select name="" class="form-control form-select" id="cuenta_select">
-                <option class="form-control" value="Personal">Personal</option>
-                <option class="form-control" value="Empresarial">Empresarial</option>
-              </select>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-5">
-              <input name="register" id="register" class="btn login-btn" type="submit" value="Register">
-            </div>
-          </form>           
-          <p class="fs-14 text-center"><a href="index.html" class="text-reset">Login</a></p>
-        </div>
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="cuenta_select" class="">TIPO DE CUENTA</label>
+            <select name="" class="form-control form-select" id="cuenta_select">
+              <option class="form-control" value="Personal">Personal</option>
+              <option class="form-control" value="Empresarial">Empresarial</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-5">
+            <input name="register" id="register" class="btn login-btn" type="submit" value="Register">
+          </div>
+        </form>
+        <p class="fs-14 text-center"><a href="index.html" class="text-reset">Login</a></p>
       </div>
-
     </div>
-    <script src="js/register.js"></script>
+
+  </div>
+  <script src="js/register.js"></script>
 </body>
+
 </html>

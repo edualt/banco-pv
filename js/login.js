@@ -29,7 +29,7 @@ form.addEventListener('submit', (e) => {
             else if(json[i].c_empresarial == no_cuenta && json[i].nip_e == nip){
                 id = json[i].id;
                 localStorage.setItem('id', id);
-                localStorage.setItem('c_personal', no_cuenta);
+                localStorage.setItem('c_empresarial', no_cuenta);
                 localStorage.setItem('saldo', json[i].saldo);
                 window.location.href = './home.html';
                 alert('empresarial');
