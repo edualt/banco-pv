@@ -34,29 +34,83 @@
                     </div>
                 </div>
 
-               
+
 
                 <div class="">
                     <div class="d-flex row">
                         <div class="col-sm mb-3">
-                            <button class="login-btn menu-buttons">Retirar</button>
+                            <button class="login-btn menu-buttons" onclick="window.location.href='#'">Retirar</button>
                         </div>
                         <div class=" col-sm mb-3">
                             <button class="login-btn menu-buttons">Depositar</button>
                         </div>
                         <div class=" col-sm mb-3">
-                            <button class="login-btn menu-buttons">Transferir</button>
+                            <button class="login-btn menu-buttons" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Transferir</button>
                         </div>
                     </div>
 
                 </div>
 
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Transferencia</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login ">
+                            
+                                <div class="form-group container">
+                                    <label for="dest_account" class="sr-only">Transferir A:</label>
+                                    <input type="tel" name="dest_account" id="dest_account" class="form-control"
+                                        placeholder="Numero de cuenta del destinatario" maxlength="16" />
+                                </div>
+                                <div class="form-group container">
+                                    <label for="no_cuenta" class="sr-only">Monto</label>
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(50)">$50</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(100)">$100</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(200)">$200</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(500)">$500</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(1000)">$1000</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="finish">Continuar</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="text-center login">
+                                    <h1 id="amount" class="fw-bold"></h1>
+                                </div>
+                            
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
 
             </div>
 
         </div>
-        <script src="js/home.js" type="module"></script>
-        <script src="js/login.js" type="module"></script>
-</body>
-
+        <script src="js/home.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/transfer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
 </html>

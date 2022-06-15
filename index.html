@@ -12,9 +12,9 @@
 </head>
 
 <body style="
-      font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background-color: #63b2fd;
-    ">
+font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+background-color: #63b2fd;
+">
   <div class="d-flex justify-content-center align-items-center min-vh-100">
     <div class="p-5" style="background-color: #ffffff" id="workspace">
       <div class="login">
@@ -22,12 +22,13 @@
         <form action="#!" id="form">
           <div class="form-group">
             <label for="no_cuenta" class="sr-only">NUMERO DE CUENTA</label>
-            <input type="text" name="no_cuenta" id="no_cuenta" class="form-control" placeholder="Numero de cuenta" maxlength="16" />
+            <input type="tel" name="no_cuenta" id="no_cuenta" class="form-control" placeholder="Numero de cuenta"
+              maxlength="16" />
             <p id="error"></p>
           </div>
           <div class="form-group mb-3">
             <label for="nip" class="">NIP</label>
-            <input type="password" name="password" id="nip" class="form-control" placeholder="NIP" />
+            <input type="password" name="password" id="nip" class="form-control" placeholder="NIP" maxlength="4"/>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-5">
             <input name="login" id="login" class="btn login-btn" type="submit" value="Login" />
