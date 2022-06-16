@@ -16,7 +16,7 @@
 
     <div class="d-flex justify-content-center align-items-center min-vh-100">
 
-        <div class="p-5" style="background-color: #ffffff;">
+        <div class="home p-5" style="background-color: #ffffff;">
             <h1 class="fw-bold" id="welcome">Bienvenido </h1>
 
             <hr>
@@ -24,11 +24,11 @@
             <div class="d-flex justify-content-center row ">
 
                 <div class="pb-3" id="form">
-                    <div class="w-100">
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="fw-bold">Mi cuenta</h2>
-                                <p id="psaldo"></p>
+                                <h1 class="fw-bold">Mi cuenta</h1>
+                                <h1 class="account" id="a_number"> </h1>
                             </div>
                         </div>
                     </div>
@@ -36,66 +36,104 @@
 
 
 
-                <div class="">
+                
                     <div class="d-flex row">
                         <div class="col-sm mb-3">
-                            <button class="login-btn menu-buttons" onclick="window.location.href='#'">Retirar</button>
+                            <button class="login-btn menu-buttons" data-bs-toggle="modal"
+                            data-bs-target="#getSaldo">Consultar saldo</button>
                         </div>
-                        <div class=" col-sm mb-3">
-                            <button class="login-btn menu-buttons">Depositar</button>
-                        </div>
-                        <div class=" col-sm mb-3">
-                            <button class="login-btn menu-buttons" type="button" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Transferir</button>
+                        <div class="col-sm mb-3">
+                            <button class="login-btn menu-buttons" data-bs-toggle="modal"
+                            data-bs-target="#withdraw">Retirar</button>
                         </div>
                     </div>
 
-                </div>
+                    <div class="d-flex row">
+                        <div class=" col-sm mb-3">
+                            <button class="login-btn menu-buttons" data-bs-toggle="modal"
+                            data-bs-target="#deposito" onclick="clearAmount('amount_txt')">Depositar</button>
+                        </div>
+                        <div class=" col-sm mb-3">
+                            <button class="login-btn menu-buttons" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="clearAmount('amount_')">Transferir</button>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="getSaldo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title fw-bold" id="exampleModalLabel">Consultar saldo</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal('succesful')"></button>
+                            </div>
+                            <div class="modal-body login ">
+                                
+                                    <div class="modal-body login">
+                                        <div class="form-group container">
+                                            <div class=" row">
+                                                <div class="col-sm mb-3">
+                                                    <div class="text-center login">
+                                                        <h1 id="text_saldo" class="fw-bold">Tu saldo es: </h1>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="text-center login">
+                                            <h1 id="amount" class="fw-bold"></h1>
+                                        </div>
+                                    </div>
+
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog login">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Transferencia</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <h1 class="modal-title fw-bold" id="exampleModalLabel">Transferencia</h1>
+                          <button type="button" class="btn-close" onclick="clearAmount('amount')" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body login ">
+                        <div class="modal-body  ">
                             
                                 <div class="form-group container">
-                                    <label for="dest_account" class="sr-only">Transferir A:</label>
+                                    <label for="dest_account" class="sr-only"><h3 class="fw-bold">Transferir A:</h3></label>
                                     <input type="tel" name="dest_account" id="dest_account" class="form-control"
-                                        placeholder="Numero de cuenta del destinatario" maxlength="16" />
+                                        placeholder="Numero de cuenta del destinatario" maxlength="16" required />
                                 </div>
                                 <div class="form-group container">
-                                    <label for="no_cuenta" class="sr-only">Monto</label>
+                                    <label for="no_cuenta" class="sr-only"><h3 class="fw-bold">Monto</h3></label>
                                     <div class=" row">
                                         <div class="col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(50)">$50</button>
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(50,'amount_')">$50</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(100)">$100</button>
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(100,'amount_')">$100</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(200)">$200</button>
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(200,'amount_')">$200</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(500)">$500</button>
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(500,'amount_')">$500</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(1000)">$1000</button>
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(1000,'amount_')">$1000</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" onclick="clearAmount('amount_')">Cancelar</button>
                                         </div>
                                         <div class=" col-sm mb-3">
-                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="finish">Continuar</button>
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="finish" onclick="clearAmountDiv('amount_')">Continuar</button>
                                         </div>
                                         
                                     </div>
                                 </div>
 
                                 <div class="text-center login">
-                                    <h1 id="amount" class="fw-bold"></h1>
+                                    <h1 id="amount_" class="fw-bold">Total: $0</h1>
                                 </div>
                             
                         </div>
@@ -104,13 +142,280 @@
                     </div>
                   </div>
 
+                  <div class="modal fade" id="accountNotFound" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+                  role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Transferencia</h5>
+                          <button type="button" class="btn-close" onclick="closeModal('accountNotFound')" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login">
+                                <div class="form-group container">
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <div class="text-center login">
+                                                <h1 id="amount" class="fw-bold">Cuenta no encontrada :/</h1>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="text-center login">
+                                    <h1 id="amount" class="fw-bold"></h1>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+                  <div class="modal fade" id="sameAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+                  role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Transferencia</h5>
+                          <button type="button" class="btn-close" onclick="closeModal('sameAccount')" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login">
+                                <div class="form-group container">
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <div class="text-center login">
+                                                <h1 id="amount" class="fw-bold">No puedes transferir a tu propia cuenta!</h1>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="text-center login">
+                                    <h1 id="amount" class="fw-bold"></h1>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+                  <div class="modal fade" id="insufficientBalance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+                  role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Transferencia</h5>
+                          <button type="button" class="btn-close" onclick="closeModal('insufficientBalance')" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login">
+                                <div class="form-group container">
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <div class="text-center login">
+                                                <h1 id="amount" class="fw-bold">Saldo insuficiente!</h1>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="text-center login">
+                                    <h1 id="amount" class="fw-bold"></h1>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+                  <div class="modal fade" id="deposito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fw-bold" id="exampleModalLabel">Deposito</h1>
+                          <button type="button" class="btn-close" onclick="clearAmount('amount_txt')" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login ">
+    
+                                <div class="form-group container">
+                                    <label for="no_cuenta" class="sr-only"><h3 class="fw-bold">Monto</h3></label>
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(50, 'amount_txt')">$50</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(100, 'amount_txt')">$100</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(200, 'amount_txt')">$200</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(500, 'amount_txt')">$500</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(1000, 'amount_txt')">$1000</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" onclick="clearAmount('amount_txt')">Cancelar</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="deposit" onclick="clearAmountDiv('amount_txt'); depositTimer()">Continuar</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="text-center login">
+                                    <h1 id="amount_txt" class="fw-bold">Total: $0</h1>
+                                </div>
+                            
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="modal fade" id="ingreso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+                  role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title" id="exampleModalLabel">Deposito</h1>
+                          <button type="button" class="btn-close" onclick="closeModal('ingreso')" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login">
+                                <div class="form-group container">
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <div class="text-center login">
+                                                <h1 class="fw-bold">Por favor ingrese los billetes.</h1>
+                                                <h4 class="">Tiene 2 minutos para ingresarlos, una vez haya finalizado pulse continuar.</h4>
+                                                <div class=" col-sm mt-4">
+                                                    <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="ingreso_bton" >Continuar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="text-center login">
+                                    <h1 id="amount" class="fw-bold"></h1>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+                  <div class="modal fade" id="timeOut" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+                  role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="exampleModalLabel">Deposito</h1>
+                            <button type="button" class="btn-close" onclick="closeModal('timeOut')" id="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login">
+                                <div class="form-group container">
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <div class="text-center login">
+                                                <h1 class="fw-bold">Tiempo agotado, se cancelara la operacion!</h1>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+                
+                  <div class="modal fade" id="withdraw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fw-bold" id="exampleModalLabel">Retiro</h1>
+                          <button type="button" class="btn-close" onclick="clearAmount('amount_w')" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body login ">
+    
+                                <div class="form-group container">
+                                    <label for="no_cuenta" class="sr-only"><h3 class="fw-bold">Monto</h3></label>
+                                    <div class=" row">
+                                        <div class="col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(50, 'amount_w')">$50</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(100, 'amount_w')">$100</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(200, 'amount_w')">$200</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(500, 'amount_w')">$500</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" onclick="sumAmount(1000, 'amount_w')">$1000</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" onclick="clearAmount('amount_w')">Cancelar</button>
+                                        </div>
+                                        <div class=" col-sm mb-3">
+                                            <button class="w-100 transfer-btn focus" data-bs-dismiss="modal" aria-label="Close" id="withdraw_btn" onclick="clearAmountDiv('amount_w')">Continuar</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="text-center login">
+                                    <h1 id="amount_w" class="fw-bold">Total: $0</h1>
+                                </div>
+
+                                
+                            
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="successful" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title fw-bold" id="exampleModalLabel">Correcto!</h2>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal('successful')"></button>
+                        </div>
+                        <div class="modal-body login ">
+                            
+                                <div class="modal-body login">
+                                    <div class="form-group container">
+                                        <div class=" row">
+                                            <div class="col-sm mb-3">
+                                                <div class="text-center login">
+                                                    <h1 class="fw-bold">Operacion exitosa!</h1>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="text-center login">
+                                        <h1 id="amount" class="fw-bold"></h1>
+                                    </div>
+                                </div>
+
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
 
             </div>
 
         </div>
         <script src="js/home.js"></script>
         <script src="js/login.js"></script>
-        <script src="js/transfer.js"></script>
+        <script src="js/transfer.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>
