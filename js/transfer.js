@@ -160,3 +160,37 @@ withdraw_btn.addEventListener('click', function () {
         })
 });
 
+//button to get saldo
+const saldo_btn = document.getElementById('saldo_btn');
+
+saldo_btn.addEventListener('click', function () {
+
+    if(no_cuenta.substring(0,4) === '4152'){
+        fetch(`http://127.0.0.1:4000/api/users/personal/${id}`)
+        .then(res => res.json())
+        .then(json => {
+        console.log(json);
+    
+        for(var i = 0; i < json.length; i++){
+            if(json[i].c_personal == no_cuenta){
+                text_saldo.innerHTML = 'Saldo: $' + json[i].saldo;
+            }
+        }
+    
+        
+    })
+    }else if(no_cuenta.substring(0,4) === '3142'){
+        fetch(`http://127.0.0.1:4000/api/users/empresarial/${id}`)
+        .then(res => res.json())
+        .then(json => {
+        console.log(json);
+    
+            for(var i = 0; i < json.length; i++){
+                if(json[i].c_empresarial == no_cuenta){
+                    text_saldo.innerHTML = 'Saldo: $' + json[i].saldo;
+                }
+            }
+            
+    })
+    }
+});
